@@ -7,8 +7,8 @@
   "background_color": "#ffc0cb",
   "theme_color": "#ffc0cb",
   "icons": [{
-    "src": "/assets/icon.png",
-    "type": "image/png",
+    "src": "/assets/icon.svg",
+    "type": "image/svg",
     "sizes": "512x512"
   }]
 }

@@ -1,7 +1,7 @@
 /* global self */
 
-var VERSION = String(Date.now())
-var URLS = [
+const VERSION = String(Date.now())
+const URLS = [
   '/',
   '/bundle.css',
   '/bundle.js',

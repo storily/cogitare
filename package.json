@@ -3,21 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bankai build index.js",
+    "build": "bankai build --html [ --css /assets/bulma.css --favicon /assets/icon.svg ] index.js",
     "inspect": "bankai inspect index.js",
     "start": "bankai start index.js",
-    "test": "standard && test-deps",
-    "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons"
+    "test": "standard"
   },
   "dependencies": {
+    "bulma": "^0.5.0",
     "choo": "^6.0.0-4",
     "choo-devtools": "^1.3.1",
     "choo-log": "^7.1.0",
     "choo-service-worker": "^2.1.6",
-    "tachyons": "^4.7.4"
+    "dexie": "^1.5.1"
   },
   "devDependencies": {
     "bankai": "^9.0.0-1",
+    "dependency-check": "^2.9.1",
     "standard": "^10.0.2"
   }
 }
