@@ -1,3 +1,4 @@
+const css = require('sheetify')
 const html = require('choo/html')
 const nav = require('./nav')
 
@@ -8,8 +9,12 @@ function layout (state, emit, contents = []) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
   if (!Array.isArray(contents)) contents = [contents]
 
+  const top = css`html {
+    font-display: swap;
+  }`
+
   return html`
-    <body>
+    <body class="${top}">
       <header>
         ${nav()}
       </header>
