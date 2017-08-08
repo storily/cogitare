@@ -3,21 +3,45 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bankai build --html [ --css /assets/bulma.css --favicon /assets/icon.svg ] index.js",
-    "inspect": "bankai inspect index.js",
-    "start": "bankai start index.js",
+    "build": "npm run css:build && npm run js:build",
+    "watch": "run-p css:watch js:watch",
+    "css:build": "postcss 'css/**/!(_*).css' -c .postcss.js --dir bundle/css",
+    "css:watch": "nodemon -e css,json -w css -w package-lock.json -x 'npm run css:build'",
+    "js:build": "browserify index.js -dt babelify -t package-json-versionify | exorcist bundle/index.js.map > bundle/index.js",
+    "js:watch": "nodemon -e js,json -i bundle -i css -i node_modules -x 'npm run js:build'",
     "test": "standard"
   },
   "dependencies": {
-    "bulma": "^0.5.0",
-    "choo": "^6.0.0-4",
-    "choo-devtools": "^1.3.1",
-    "choo-log": "^7.1.0",
-    "choo-service-worker": "^2.1.6"
+    "babel-plugin-inferno": "^3.2.0",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "browserify": "^14.4.0",
+    "cssnano": "^3.10.0",
+    "exorcist": "^0.4.0",
+    "inferno": "^3.7.1",
+    "inferno-component": "^3.7.1",
+    "inferno-router": "^3.7.1",
+    "inferno-server": "^3.7.1",
+    "package-json-versionify": "^1.0.4",
+    "postcss": "^6.0.8",
+    "postcss-cli": "^4.1.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-font-magician": "^2.0.0",
+    "postcss-partial-import": "^4.1.0",
+    "uglifyify": "^4.0.3",
+    "util": "github:mikeal/node-util"
   },
   "devDependencies": {
-    "bankai": "^9.0.0-1",
-    "dependency-check": "^2.9.1",
-    "standard": "^10.0.2"
-  }
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.2",
+    "standard": "^10.0.2",
+    "supertest": "^3.0.0",
+    "tap": "^10.7.1"
+  },
+  "browser": {
+    "util": "util"
+  },
+  "browserlist": ">1% in NZ, chrome 41, firefox esr, not ie <= 11"
 }
