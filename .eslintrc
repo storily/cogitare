@@ -1,0 +1,6 @@
+---
+extends:
+  - standard
+  - plugin:inferno/recommended
+rules:
+  inferno/jsx-key: off

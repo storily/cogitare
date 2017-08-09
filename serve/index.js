@@ -17,12 +17,20 @@ app.use(files(path.join(__dirname, '../public'), {
   maxage: app.env === 'development' ? 0 : 14400000 // 4 hours
 }))
 
+app.use(async (ctx, next) => {
+  try {
+    await next()
+  } catch (err) {
+    ctx.status = err.status || 500
+    ctx.body = err.message
+    ctx.app.emit('error', err, ctx)
+  }
+})
+
 app.use(async (ctx) => {
   if (ctx.accepts('html')) {
-    if (ctx.path === '/') {
-      ctx.type = 'text/html'
-      ctx.body = render()
-    }
+    ctx.type = 'text/html'
+    render(ctx)
   }
 })
 

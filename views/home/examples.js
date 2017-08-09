@@ -1,13 +1,13 @@
-import Inferno from 'inferno';
+import Inferno from 'inferno'
 import { SearchLink, TagLink } from '../util/links'
 
 export function ExampleRow ({ children }) {
   return (
-    <div className="row justify-content-center example-row">
-      <div className="col-md-2 example-name">
+    <div className='row justify-content-center example-row'>
+      <div className='col-md-2 example-name'>
         {children.shift()}
       </div>
-      <div className="col-md-6 example-hint">
+      <div className='col-md-6 example-hint'>
         {children}
       </div>
     </div>
@@ -17,7 +17,7 @@ export function ExampleRow ({ children }) {
 export default function examples () {
   return [
     <ExampleRow>
-      Prompt ID
+      ID
       <p>
         <SearchLink text='#7' />{', '}
         <SearchLink text='#21' />{', '}

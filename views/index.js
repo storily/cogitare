@@ -1,11 +1,14 @@
-import Inferno from 'inferno';
+import Inferno from 'inferno'
+import { Route, IndexRoute } from 'inferno-router'
 import { Layout } from './layout'
 import Home from './home'
+import NotFound from './not-found'
 
-export function App () {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  )
-}
+const app = (
+  <Route component={Layout}>
+    <IndexRoute component={Home} />
+    <Route path='*' component={NotFound} />
+  </Route>
+)
+
+export default app

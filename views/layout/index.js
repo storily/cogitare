@@ -1,4 +1,4 @@
-import Inferno from 'inferno';
+import Inferno from 'inferno'
 import { Nav } from './nav'
 
 export function Layout ({ children }) {
