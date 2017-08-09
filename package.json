@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
+    "neon": false,
     "node": "^8.2.1",
     "npm": "^5.3.0"
   },
