@@ -3,6 +3,7 @@ import Server from 'inferno-server'
 import VNodeFlags from 'inferno-vnode-flags'
 import { RouterContext, match } from 'inferno-router'
 import { readFileSync } from 'fs'
+import root from 'find-root'
 import path from 'path'
 import app from './views'
 
@@ -26,7 +27,7 @@ export function render (ctx) {
     { id: 'target' }
   )
 
-  const html = readFileSync(path.join(__dirname, '/index.html'), 'utf8')
+  const html = readFileSync(path.join(root(__dirname), 'index.html'), 'utf8')
   ctx.body = html.replace('<div id="target" />', Server.renderToString(content))
   if (/Took a wrong turn somewhere mate/.test(html)) {
     ctx.status = 404
