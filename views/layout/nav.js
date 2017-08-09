@@ -1,32 +1,37 @@
-const html = require('choo/html')
+import Inferno from 'inferno';
 
-module.exports = nav
-function nav () {
-  return html`
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img alt="Cogitare" src="/assets/icon.svg" height="48" width="32">
+export function Nav () {
+  return (
+    <nav className='navbar navbar-toggleable navbar-light sticky-top'>
+        <a className='navbar-brand' href='/'>
+          <img alt='Cogitare' src='/assets/icon.svg' height='64' />
         </a>
 
-        <div class="navbar-burger burger" data-target="nav-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div class="navbar-menu" id="nav-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/random">Random</a>
-          <a class="navbar-item" href="/tags">Tags</a>
-          <a class="navbar-item" href="/docs/bots">Bots</a>
-          <a class="navbar-item" href="/submit">Submit</a>
-        </div>
+        <ul className='navbar-nav mr-auto'>
+          <li className='nav-item'>
+            <a className='nav-link' href='/'>Home</a>
+          </li>
+          <li className='nav-item'>
+            <a className='nav-link' href='/random'>Random</a>
+          </li>
+          <li className='nav-item'>
+            <a className='nav-link' href='/tags'>Tags</a>
+          </li>
+        </ul>
 
-        <div class="navbar-end">
-          <a class="navbar-item" href="/tag/foo">Login</a>
-        </div>
-      </div>
+        <ul className='navbar-nav ml-auto'>
+          <li className='nav-item'>
+            <a className='nav-link' href='/docs'>About</a>
+          </li>
+          <li className='nav-item'>
+            <a className='nav-link' href='/docs/bots'>Bots</a>
+          </li>
+          <li className='nav-item'>
+            <a className='nav-link' href='/docs/submit'>Submit</a>
+          </li>
+        </ul>
+
+        <a className='btn btn-outline-success my-2 my-sm-0' href='/login'>Login</a>
     </nav>
-  `
+  )
 }

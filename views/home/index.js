@@ -1,31 +1,31 @@
-const css = require('sheetify')
-const html = require('choo/html')
-const layout = require('../layout')
+import Inferno from 'inferno';
+import examples from './examples'
 
-const banner = require('./banner')
-const hints = require('./hints')
-const search = require('./search')
+function Search () {
+  return (
+    <div className="input-group">
+      <input type="text" className="form-control form-control-lg" placeholder="Search" autofocus="autofocus"/>
+      <span className="input-group-btn">
+        <button className="btn btn-success" type="button">Search</button>
+      </span>
+    </div>
+  )
+}
 
-module.exports = view
-function view (state, emit) {
-  const icon = css`
-  :host.is-dark .title {
-    background: url(/assets/icon.svg) no-repeat;
-    background-size: 1em;
-    color: black;
-    padding-left: 1em;
-    background-position: -0.25em 0.1em;
-    filter: invert(100%);
-  }
-  `
-
-  return layout(state, emit, [
-    banner(
-      'Cogitare',
-      'A collection of story prompts and plot ideas for writers and bots.',
-      ['is-dark', icon]
-    ),
-    search,
-    hints
-  ])
+export default function Home () {
+  return (
+      <div className="container home-search">
+        <div className="row justify-content-center">
+          <div className="col-md-5">
+            <Search />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-md-5">
+            <h2 className="try">Try some searches:</h2>
+          </div>
+        </div>
+        {examples()}
+      </div>
+  )
 }
