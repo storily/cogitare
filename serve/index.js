@@ -56,7 +56,7 @@ const { Socket } = require('net')
 const fd = Number((process.env.LISTEN_FD || process.env.LISTEN_FDS || '').replace(/[^\d]/g, '').trim())
 const server = fd
   ? app.listen(new Socket({ fd }), portlog)
-  : app.listen(8000, portlog)
+  : app.listen(process.env.PORT || 8000, portlog)
 
 function portlog () {
   console.log('Server is listening!')

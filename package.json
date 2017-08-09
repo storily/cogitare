@@ -2,6 +2,10 @@
   "name": "cogitare",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "^8.2.1",
+    "npm": "^5.3.0"
+  },
   "scripts": {
     "build": "mkdir -p public/js && npm run css:build && npm run js:build && npm run serve:build",
     "watch": "mkdir -p public/js && run-p css:watch js:watch serve:watch",
@@ -13,6 +17,8 @@
     "serve:run": "node serve",
     "serve:watch": "nodemon -e js,json -i public -i css -i node_modules -i serve/render.js -x 'npm run serve:build; node serve'",
     "lint": "eslint --cache --ignore-path .gitignore .",
+    "install": "npm run build",
+    "start": "npm run serve:run",
     "test": "npm run lint"
   },
   "dependencies": {
