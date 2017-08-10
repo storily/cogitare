@@ -1,16 +1,6 @@
 import Inferno from 'inferno'
+import Search from './search'
 import examples from './examples'
-
-function Search () {
-  return (
-    <div className='input-group'>
-      <input type='text' className='form-control form-control-lg' placeholder='Search' autoFocus='autofocus' />
-      <span className='input-group-btn'>
-        <button className='btn btn-success' type='button'>Search</button>
-      </span>
-    </div>
-  )
-}
 
 export default function Home () {
   return (

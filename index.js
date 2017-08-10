@@ -8,8 +8,12 @@ setTimeout(() => target.classList.remove('server'), 200)
 
 const browserHistory = createBrowserHistory()
 
+const ctx = {
+  location: window.location
+}
+
 Inferno.render(
-  <Router history={browserHistory}>{app}</Router>,
+  <Router history={browserHistory}>{app(ctx)}</Router>,
   target,
   { recyclingEnabled: true }
 )

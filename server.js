@@ -8,7 +8,13 @@ import path from 'path'
 import app from './views'
 
 export function render (ctx) {
-  const renderProps = match(app, ctx.url)
+  const appCtx = {
+    location: {
+      search: ctx.request.search
+    }
+  }
+
+  const renderProps = match(app(appCtx), ctx.url)
   if (renderProps.redirect) {
     return ctx.redirect(renderProps.redirect)
   }
