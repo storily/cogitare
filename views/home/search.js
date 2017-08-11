@@ -11,7 +11,7 @@ function Search ({ query }) {
           className='form-control form-control-lg'
           placeholder='Search'
           autoFocus='autofocus'
-          defaultValue={query.get('q') || ''}
+          value={query.search}
         />
 
         <span className='input-group-btn'>

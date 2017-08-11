@@ -9,9 +9,8 @@ import app from './views'
 
 export function render (ctx) {
   const appCtx = {
-    location: {
-      search: ctx.request.search
-    }
+    global: ctx,
+    url: ctx.href
   }
 
   const renderProps = match(app(appCtx), ctx.url)

@@ -1,15 +1,18 @@
 import Inferno from 'inferno'
 import { Router } from 'inferno-router'
-import createBrowserHistory from 'history/createBrowserHistory'
 import app from './views'
+import createBrowserHistory from 'history/createBrowserHistory'
+import { fromUrl } from './stores/query'
 
 const target = document.getElementById('target')
 setTimeout(() => target.classList.remove('server'), 200)
 
 const browserHistory = createBrowserHistory()
+browserHistory.listen((location) => fromUrl(location.search))
 
 const ctx = {
-  location: window.location
+  global: window,
+  url: '' + window.location
 }
 
 Inferno.render(

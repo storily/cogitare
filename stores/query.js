@@ -1,12 +1,20 @@
 import { observable } from 'mobx'
-import { parse } from 'querystring'
+import { URL } from 'url'
 
-export default function (ctx) {
-  const store = new Map()
-  const query = ctx.location.search.replace(/^\?/, '')
-  for (const [k, v] of Object.entries(parse(query))) {
-    store.set(k, v)
-  }
+const query = observable({
+  search: ''
+})
 
-  return observable(store)
+export default query
+
+export function fromUrl (url) {
+  const { searchParams } = new URL(url, global.location || 'https://a')
+  query.search = searchParams.get('q') || ''
+}
+
+let firstRun = true
+export function init (ctx) {
+  if (!firstRun) { return }
+  fromUrl(ctx.url)
+  firstRun = false
 }

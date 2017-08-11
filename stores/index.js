@@ -1,10 +1,12 @@
 import Inferno from 'inferno'
 import { Provider as MobxProvider } from 'inferno-mobx'
 
-import query from './query'
+import query, { init as queryInit } from './query'
 
 export function Provider ({ ctx, children }) {
+  queryInit(ctx)
+
   return <MobxProvider
-    query={query(ctx)}
+    query={query}
   >{children}</MobxProvider>
 }

@@ -1,8 +1,9 @@
 import Inferno from 'inferno'
+import { Link as InfernoLink } from 'inferno-router'
 import c from 'classnames'
 
 export function Link ({ href, text, className }) {
-  return <a href={href} className={className}>{text}</a>
+  return <InfernoLink to={href} className={className}>{text}</InfernoLink>
 }
 
 export function SearchLink (props) {
