@@ -1,9 +1,21 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
+import { update } from '../../stores/history'
+import query from '../../stores/query'
+
+function updateQuery (e) {
+  e.preventDefault()
+  const search = e.target.q.value
+  query.search = search
+  update((location) => {
+    location.search = '?q=' + search
+  })
+  return false
+}
 
 function Search ({ query }) {
   return (
-    <form method='get' action='/'>
+    <form method='get' action='/' onSubmit={updateQuery}>
       <div className='input-group'>
         <input
           type='text'
