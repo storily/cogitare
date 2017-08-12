@@ -1,4 +1,6 @@
 {
-  "presets": ["env", "babili"],
+  "presets": [["env", {
+    "spec": true
+  }], "babili"],
   "plugins": ["inferno"]
 }
