@@ -1,0 +1,52 @@
+.loading-button {
+  overflow: hidden;
+  padding: 0;
+  width: 5em;
+
+  & .loading, & .cancel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .loading {
+    transition-property: height, opacity;
+    transition-duration: 300ms;
+
+    &::before {
+      display: block;
+      width: 1.5em;
+      height: 1.5em;
+      content: ' ';
+      border-top: 2px solid;
+      border-left: 2px solid;
+      border-radius: 100%;
+      animation: loading-button-spinner linear 1s infinite;
+    }
+  }
+
+  & .cancel {
+    font-size: 2em;
+    line-height: 0.5;
+  }
+
+  &:hover {
+    & .loading {
+      height: 0;
+      opacity: 0;
+      animation: none;
+    }
+  }
+}
+
+@keyframes loading-button-spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
