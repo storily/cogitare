@@ -13,10 +13,17 @@
   }
 
   & .example-name {
-    border-right: 1px dotted gray;
-    margin-right: 1em;
+    border-style: dotted;
+    border-width: 0 0 1px 1px;
+    margin: 0 1em 1em 1em;
     padding-right: 1em;
-    text-align: right;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      border-width: 0 1px 0 0;
+      margin: 0 1em 0 0;
+      text-align: right;
+    }
   }
 
   & .example-hint {

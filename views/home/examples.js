@@ -4,7 +4,7 @@ import { SearchLink, TagLink } from '../util/links'
 export function ExampleRow ({ children }) {
   return (
     <div className='row justify-content-center example-row'>
-      <div className='col-md-2 example-name'>
+      <div className='col-md-3 example-name'>
         {children.shift()}
       </div>
       <div className='col-md-6 example-hint'>
