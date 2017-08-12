@@ -69,7 +69,7 @@ export default function examples () {
         {' '}<SearchLink text='"stranger&nbsp;in&nbsp;a&nbsp;room"!' />.
       </p>
       <p>
-        Curly quotes that may be inserted when typing or copy-pasting are
+        Curly quotes that may be inserted when typing or copy-pasting
         (like “smart quotes”) automatically convert to straight ones.
         Similarly all sorts of typographic dashes are normalised to hyphens.
         All matching is case-insensitive.
