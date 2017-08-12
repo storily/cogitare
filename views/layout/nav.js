@@ -3,7 +3,7 @@ import { Link } from '../util/links'
 
 export function Nav () {
   return (
-    <nav className='navbar navbar-toggleable navbar-light sticky-top'>
+    <nav className='navbar navbar-expand-sm navbar-light sticky-top'>
       <Link className='navbar-brand' href='/'>
         <img alt='Cogitare' src='/assets/icon.svg' height='64' />
       </Link>
