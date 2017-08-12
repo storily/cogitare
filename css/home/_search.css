@@ -1,0 +1,30 @@
+.home-search {
+  color: gray;
+
+  & .try {
+    font-size: 1.5em;
+    margin: 2em 0 1.5em;
+    padding-top: 1em;
+    text-align: center;
+  }
+
+  & .example-row {
+    font-size: 1.3em;
+  }
+
+  & .example-name {
+    border-right: 1px dotted gray;
+    margin-right: 1em;
+    padding-right: 1em;
+    text-align: right;
+  }
+
+  & .example-hint {
+    color: #444;
+
+    & p {
+      line-height: 1.4;
+      margin-bottom: 1em;
+    }
+  }
+}

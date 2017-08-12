@@ -1,0 +1,14 @@
+.navbar {
+  & .nav-item {
+    padding-right: 1em;
+  }
+
+  & .navbar-brand img {
+    height: 2rem;
+    transition: transform 200ms;
+
+    @nest &:hover, &:focus, &:active, .server & {
+      transform: rotate(-90deg);
+    }
+  }
+}
