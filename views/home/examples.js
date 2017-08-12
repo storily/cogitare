@@ -16,6 +16,12 @@ export function ExampleRow ({ children }) {
 
 export default function examples () {
   return [
+    <div className='row justify-content-center'>
+      <div className='col-lg-5'>
+        <h2 className='try'>Try some searches:</h2>
+      </div>
+    </div>,
+
     <ExampleRow>
       ID
       <p>
