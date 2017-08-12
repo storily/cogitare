@@ -27,7 +27,7 @@
     "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^4.0.0-beta",
     "browserify": "^14.4.0",
     "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
