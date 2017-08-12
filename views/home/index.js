@@ -8,7 +8,7 @@ export default connect(['query'], function Home ({ query }) {
   return (
     <div className='container home-search'>
       <div className='row justify-content-center'>
-        <div className='col-lg-5'>
+        <div className='col-lg-9'>
           <Search />
         </div>
       </div>
