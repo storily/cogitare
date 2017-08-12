@@ -1,6 +1,8 @@
 .navbar {
   & .nav-item {
-    padding-right: 1em;
+    @media (min-width: 768px) {
+      padding-right: 1em;
+    }
   }
 
   & .navbar-brand img {

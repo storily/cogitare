@@ -9,30 +9,30 @@ export function Nav () {
       </Link>
 
       <ul className='navbar-nav mr-auto'>
-        <li className='nav-item'>
+        <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/'>Home</Link>
         </li>
         <li className='nav-item'>
           <Link className='nav-link' href='/random'>Random</Link>
         </li>
-        <li className='nav-item'>
+        <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/tags'>Tags</Link>
         </li>
       </ul>
 
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
-          <Link className='nav-link' href='/docs'>About</Link>
+          <Link className='nav-link' href='/docs'>Docs</Link>
         </li>
-        <li className='nav-item'>
+        <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/docs/bots'>Bots</Link>
         </li>
-        <li className='nav-item'>
+        <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/docs/submit'>Submit</Link>
         </li>
       </ul>
 
-      <Link className='btn btn-outline-success my-2 my-sm-0' href='/login'>Login</Link>
+      <Link className='btn btn-outline-success my-2 my-sm-0 ml-3' href='/login'>Login</Link>
     </nav>
   )
 }
