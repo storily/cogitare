@@ -1,8 +1,10 @@
 import Inferno from 'inferno'
+import { connect } from 'inferno-mobx'
 import Search from './search'
 import examples from './examples'
+import results from './results'
 
-export default function Home () {
+export default connect(['query'], function Home ({ query }) {
   return (
     <div className='container home-search'>
       <div className='row justify-content-center'>
@@ -10,7 +12,10 @@ export default function Home () {
           <Search />
         </div>
       </div>
-      {examples()}
+      {query.search.trim().length === 0
+        ? examples()
+        : results()
+      }
     </div>
   )
-}
+})
