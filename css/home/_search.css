@@ -1,6 +1,10 @@
 .home-search {
   color: gray;
 
+  & .search-button button {
+    height: 3em;
+  }
+
   & .try {
     font-size: 1.5em;
     margin: 2em 0 1.5em;

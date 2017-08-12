@@ -32,14 +32,15 @@ function Search ({ query }) {
           name='q'
           className='form-control form-control-lg'
           placeholder='Search'
+          aria-label='Search'
           autoFocus='autofocus'
           value={query.search}
         />
 
-        <span className='input-group-btn'>
+        <span className='input-group-btn search-button'>
           {query.search.trim().length === 0
-            ? <button className='btn btn-success' type='submit'>Search</button>
-            : <LoadingButton className='btn btn-outline-success' onClick={clearQuery} />
+            ? <button className='btn btn-lg btn-success' type='submit'>Search</button>
+            : <LoadingButton className='btn btn-lg btn-outline-success' onClick={clearQuery} />
           }
         </span>
       </div>
