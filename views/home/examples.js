@@ -57,7 +57,7 @@ export default function examples () {
         {' '}<code>?</code> after a term makes it optional. Results
         {' '}<em>with</em> the term will appear first. Try it with {' '}
         <SearchLink text='earthfic castle historical?' />. <code>-</code>
-        {' '}<em>before</em> a term will exclude it.
+        {' '}<em>before</em> a term will exclude it, like <code>NOT</code>.
       </p>
       <p>
         <b>Full text:</b>{' '}
