@@ -12,6 +12,7 @@ if (app.env === 'development') {
 app.use(require('koa-compress')())
 app.use(require('koa-conditional-get')())
 app.use(require('koa-etag')())
+app.use(require('koa-helmet')())
 
 app.use(files(path.join(__dirname, '../public'), {
   maxage: app.env === 'development' ? 0 : 14400000 // 4 hours
