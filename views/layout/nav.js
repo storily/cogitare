@@ -20,6 +20,15 @@ export function Nav () {
         </li>
       </ul>
 
+      <ul className='navbar-nav middle-brand'>
+        <li className='nav-item collapse navbar-collapse'>
+          <Link className='nav-link' href='/'>
+            <span className='under'>Cogitare</span>
+            <span className='over'>Prompts, twists, and plots</span>
+          </Link>
+        </li>
+      </ul>
+
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
           <Link className='nav-link' href='/docs'>Docs</Link>

@@ -39,8 +39,8 @@ function Search ({ query }) {
 
         <span className='input-group-btn search-button'>
           {query.search.trim().length === 0
-            ? <button className='btn btn-lg btn-success' type='submit'>Search</button>
-            : <LoadingButton className='btn btn-lg btn-outline-success' onClick={clearQuery} />
+            ? <button className='btn btn-success' type='submit'>Search</button>
+            : <LoadingButton className='btn btn-outline-success' onClick={clearQuery} />
           }
         </span>
       </div>
