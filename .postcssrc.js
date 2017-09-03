@@ -4,8 +4,16 @@ module.exports = {
   map: { inline: false },
   plugins: [
     require('postcss-partial-import')({ prefix: '_' }),
-    require('postcss-cssnext')({ browsers, warnForDuplicates: false }),
+    require('postcss-cssnext')({
+      browsers,
+      warnForDuplicates: false,
+      features: {
+        customProperties: {
+          preserve: "computed"
+        }
+      }
+    }),
     require('postcss-font-magician')(),
-    require('cssnano')(),
+    // require('cssnano')(),
   ]
 }
