@@ -1,5 +1,5 @@
 import Inferno from 'inferno'
-import { Link, SearchLink, TagLink } from '../util/links'
+import { SearchLink } from '../util/links'
 
 export function ExampleRow ({ children }) {
   return (
@@ -23,65 +23,27 @@ export default function examples () {
     </div>,
 
     <ExampleRow>
-      ID
+      Genres and themes
       <p>
-        <SearchLink text='#7' />{', '}
-        <SearchLink text='#21' />{', '}
-        <SearchLink text='#205' />
+        <SearchLink text='fantasy' />{', '}
+        <SearchLink text='mood' />{', '}
+        <SearchLink text='science' />
       </p>
     </ExampleRow>,
     <ExampleRow>
-      Tags
+      Fandoms
       <p>
-        <SearchLink text='fiction' />{', '}
-        <SearchLink text='sci-fi characters:2' />{', '}
-        <SearchLink text='magic NOT harry-potter' />
+        <SearchLink text='harry-potter' />{', '}
+        <SearchLink text='star-wars' />{', '}
+        <SearchLink text='werewolf' />
       </p>
     </ExampleRow>,
     <ExampleRow>
-      Contents
+      Specifics
       <p>
-        <SearchLink text='"favourite&nbsp;food"' />{', '}
-        <SearchLink text='"blue&nbsp;ladies" OR "space&nbsp;ladies"' />{', '}
-        <SearchLink text='"powerful&nbsp;force" NOT star-wars' />
-      </p>
-    </ExampleRow>,
-    <ExampleRow>
-      Advanced
-      <p>
-        <b>Logic keywords:</b>{' '}
-        <code>and</code>, <code>not</code>, or <code>or</code>. But note{' '}
-        that <code>and</code> is <em>implied</em> between terms anyway, so
-        you don’t need to write it.
-      </p>
-      <p>
-        <b>Parameters:</b>{' '}
-        Some tags can take “parameters”, like <SearchLink text='characters=2' />{', '}
-        or <SearchLink text='nsfw:adult' />. The particulars of what parameter{' '}
-        which tag takes, and how they work, are available under each tag on the{' '}
-        <Link href='/tags'>Tags</Link> list, as well as each tag’s page, e.g. the{' '}
-        <TagLink text='characters' /> tag page.
-      </p>
-      <p>
-        <b>Full text:</b>{' '}
-        A quoted phrase is matched against the <em>text</em> of the quote
-        instead of its tags. By default the words in the phrase are{' '}
-        matched in order, but for convenience the search is also done{' '}
-        <em>without</em> taking order into account, and those results{' '}
-        are placed underneath the default ones.
-      </p>
-      <p>
-        <b>Normalisation:</b>{' '}
-        Curly quotes that may be inserted when typing or copy-pasting
-        (like “smart quotes”) automatically convert to straight ones.
-        Similarly all sorts of typographic dashes are normalised to hyphens.
-        All matching is case-insensitive.
-      </p>
-      <p>
-        <b>Defaults:</b>{' '}
-        All specific fandoms are excluded unless a tag that relates to them is{' '}
-        searched for. Prompts that are NSFW are excluded always, unless the {' '}
-        <TagLink text='nsfw' /> tag is added to the search.
+        <SearchLink text='raccoon friends' />{', '}
+        <SearchLink text='morally grey ladies' />{', '}
+        <SearchLink text='mundane superpower' />
       </p>
     </ExampleRow>
   ]
