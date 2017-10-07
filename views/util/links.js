@@ -3,7 +3,11 @@ import { Link as InfernoLink } from 'inferno-router'
 import c from 'classnames'
 
 export function Link ({ href, text, className, children }) {
-  return <InfernoLink to={href} className={className}>{text || children}</InfernoLink>
+  if (/^http/.test(href)) {
+    return <a href={href} className={className}>{text || children}</a>
+  } else {
+    return <InfernoLink to={href} className={className}>{text || children}</InfernoLink>
+  }
 }
 
 export function SearchLink (props) {
