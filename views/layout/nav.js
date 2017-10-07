@@ -16,7 +16,7 @@ export function Nav () {
           <Link className='nav-link' href='/random'>Random</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link className='nav-link' href='/tags'>Tags</Link>
+          <Link className='nav-link text-info' href='/nano'>NaNoWriMo</Link>
         </li>
       </ul>
 
@@ -24,7 +24,7 @@ export function Nav () {
         <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/'>
             <span className='under'>Cogitare</span>
-            <span className='over'>Prompts, twists, and plots</span>
+            <span className='over'>Prompts, seeds, and plots</span>
           </Link>
         </li>
       </ul>
