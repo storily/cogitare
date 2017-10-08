@@ -15,9 +15,6 @@ export function Nav () {
         <li className='nav-item'>
           <Link className='nav-link' href='/random'>Random</Link>
         </li>
-        <li className='nav-item collapse navbar-collapse'>
-          <Link className='nav-link text-info' href='/nano'>NaNoWriMo</Link>
-        </li>
       </ul>
 
       <ul className='navbar-nav middle-brand'>
