@@ -3,7 +3,7 @@ import { connect } from 'inferno-mobx'
 import { Link } from '../util/links'
 import Search from './search'
 import examples from './examples'
-import results from './results'
+import Results from './results'
 
 export default connect(['query'], function Home ({ query }) {
   return (
@@ -15,10 +15,10 @@ export default connect(['query'], function Home ({ query }) {
       </div>
       {query.search.trim().length === 0
         ? examples()
-        : results(query.search.trim())
+        : <Results query={query.search.trim()} />
       }
       <Link className='algolia' href='https://algolia.com'>
-        <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' />
+        <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
       </Link>
     </div>
   )

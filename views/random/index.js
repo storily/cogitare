@@ -1,5 +1,6 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
+import { Warning } from '../util/errors'
 import { Item } from '../util/item'
 
 export default connect(['dicere'], function Random ({ dicere }) {
@@ -16,7 +17,7 @@ export default connect(['dicere'], function Random ({ dicere }) {
           {loading
             ? 'Loading...'
             : (error
-              ? <Err error={error} />
+              ? <Warning error={error} />
               : <Item item={data} />
             )
           }
@@ -25,11 +26,3 @@ export default connect(['dicere'], function Random ({ dicere }) {
     </div>
   )
 })
-
-function Err ({ error }) {
-  return (
-    <div className="alert alert-warning" role="alert">
-      {`${error}`}
-    </div>
-  )
-}

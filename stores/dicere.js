@@ -3,19 +3,34 @@ import { dicere as conf } from '../config'
 import fetch from 'isomorphic-fetch'
 
 const queries = {
-  random: () => `query {
+  random: () => `query Random {
     random {
       id
       text
       tags { id name }
       dataset { id name }
     }
+  }`,
+  search: () => `query Search($query: String!) {
+    search(query: $query) {
+      item {
+        id
+        text
+        tags { id name }
+        dataset { id name }
+      }
+    }
   }`
 }
 
 const dicere = {
   random: observable(stub()),
-  fetchRandom: action(query('random', ({ random }) => random[0]))
+  fetchRandom: action(query('random', ({ random }) => random[0])),
+
+  search: observable(stub()),
+  fetchSearch: action(query('search',
+    ({ search }) => search.map(({ item }) => item)
+  ))
 }
 
 export default dicere
@@ -25,7 +40,11 @@ function stub () {
 }
 
 function query (name, transform = (a) => a) {
-  function success ({ data }) {
+  function success ({ data, errors }) {
+    if (errors) {
+      return error(errors)
+    }
+
     dicere[name].data = transform(data)
     dicere[name].error = null
     dicere[name].loading = false
