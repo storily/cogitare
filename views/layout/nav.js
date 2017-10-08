@@ -37,7 +37,7 @@ export function Nav () {
           <Link className='nav-link' href='http://dicere.cogitare.nz/docs#bots'>Bots</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link className='nav-link' href='http://dicere.cogitare.nz/docs#license'>License</Link>
+          <Link className='nav-link' href='http://dicere.cogitare.nz/docs#license'>Licenses</Link>
         </li>
       </ul>
     </nav>
