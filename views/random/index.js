@@ -5,8 +5,9 @@ import { Item } from '../util/item'
 export default connect(['dicere'], function Random ({ dicere }) {
   const { random: { data, error, loading }, fetchRandom } = dicere
 
-  if (!(data || error))
+  if (!(data || error)) {
     fetchRandom()
+  }
 
   return (
     <div className='container home-random'>

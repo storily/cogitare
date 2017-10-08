@@ -11,7 +11,6 @@ export function Provider ({ ctx, children }) {
     <MobxProvider
       dicere={dicere}
       query={query}
-      >{children}
-    </MobxProvider>
+    >{children}</MobxProvider>
   )
 }

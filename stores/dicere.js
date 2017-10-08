@@ -20,7 +20,7 @@ const dicere = {
 
 export default dicere
 
-function stub() {
+function stub () {
   return { loading: true, data: null, error: null }
 }
 
@@ -46,8 +46,7 @@ function query (name, transform = (a) => a) {
       }),
       headers: {'Content-Type': 'application/json'},
       method: 'POST'
-    })
-    .then((resp) => resp.json())
-    .then((data) => success(data), (err) => error(err))
+    }).then((resp) => resp.json())
+      .then((data) => success(data), (err) => error(err))
   }
 }
