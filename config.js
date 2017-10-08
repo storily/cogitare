@@ -3,3 +3,7 @@ export const algolia = {
   idx: process.env.ALGOLIA_IDX || 'prod_cogitare',
   key: process.env.ALGOLIA_KEY
 }
+
+export const dicere = {
+  url: (process.env.DICERE_URL || 'https://dicere.cogitare.nz') + '/graphql'
+}
