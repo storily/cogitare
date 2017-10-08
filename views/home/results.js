@@ -16,6 +16,10 @@ export default connect(['dicere'], function Results ({ dicere, query }) {
     ? <span>Loading...</span>
     : (error
       ? <Warning error={error} />
-      : <div>{data.map((item) => <Item item={item} />)}</div>
+      : <div>{
+        data.length > 0
+          ? data.map((item) => <Item item={item} />)
+          : 'No results'
+      }</div>
     )
 })
