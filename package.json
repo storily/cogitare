@@ -23,7 +23,6 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "algoliasearch": "^3.24.5",
     "babel-plugin-inferno": "^3.2.0",
     "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.6.0",
