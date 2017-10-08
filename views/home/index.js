@@ -14,7 +14,7 @@ export default connect(['query'], function Home ({ query }) {
       </div>
       {query.search.trim().length === 0
         ? examples()
-        : results()
+        : results(query.search.trim())
       }
     </div>
   )

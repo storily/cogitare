@@ -2,6 +2,7 @@ node_modules/
 coverage/
 .nyc_output/
 .eslintcache
+.env
 
 npm-debug.log*
 .DS_Store

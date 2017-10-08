@@ -12,8 +12,8 @@
     "watch": "mkdir -p public/js && run-p css:watch js:watch serve:watch",
     "css:build": "postcss 'css/**/!(_*).css' -c .postcss.js --dir public/css",
     "css:watch": "nodemon -e css,json -w css -w package-lock.json -x 'npm run css:build'",
-    "js:build": "browserify index.js -dt babelify -t package-json-versionify | exorcist public/js/index.js.map > public/js/index.js",
-    "js:watch": "nodemon -e js,json -i public -i css -i node_modules -i serve -x 'npm run js:build'",
+    "js:build": "browserify index.js -dt envify -t babelify -t package-json-versionify | exorcist public/js/index.js.map > public/js/index.js",
+    "js:watch": "nodemon -e js,json -i public -i css -i node_modules -i serve -x 'dotenv npm run js:build'",
     "serve:build": "browserify --node server.js -t babelify -o serve/render.js -s render",
     "serve:run": "node serve",
     "serve:watch": "nodemon -e js,json -i public -i css -i node_modules -i serve/render.js -x 'npm run serve:build; node serve'",
@@ -23,6 +23,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
+    "algoliasearch": "^3.24.5",
     "babel-plugin-inferno": "^3.2.0",
     "babel-preset-babili": "^0.1.4",
     "babel-preset-env": "^1.6.0",
@@ -31,6 +32,7 @@
     "browserify": "^14.4.0",
     "classnames": "^2.2.5",
     "cssnano": "^3.10.0",
+    "envify": "^4.1.0",
     "exorcist": "^0.4.0",
     "find-root": "^1.1.0",
     "history": "^4.7.2",
@@ -58,6 +60,8 @@
     "whatwg-url": "^6.3.0"
   },
   "devDependencies": {
+    "dotenv": "^4.0.0",
+    "dotenv-cli": "^1.4.0",
     "eslint": "^4.8.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
