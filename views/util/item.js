@@ -1,5 +1,5 @@
 import Inferno from 'inferno'
-import { Link } from '../util/links'
+import { TagLink } from '../util/links'
 
 export function Item ({ item }) {
   return (
@@ -8,8 +8,8 @@ export function Item ({ item }) {
         <h4 className="card-title">#{item.id}</h4>
         <h6 className="card-subtitle mb-2 text-muted">Dataset: {item.dataset.name}</h6>
         <p className="card-text">{item.text}</p>
-        {item.tags.map(({ id, name }) =>
-          <Link className='card-link' href={`/tag/${id}`}>{name}</Link>
+        {item.tags.map(({ name }) =>
+          <TagLink className='card-link' text={name} />
         )}
       </div>
     </div>
