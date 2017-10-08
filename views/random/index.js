@@ -18,7 +18,12 @@ export default connect(['dicere'], function Random ({ dicere }) {
             ? 'Loading...'
             : (error
               ? <Warning error={error} />
-              : <Item item={data} />
+              : (
+                <div>
+                  <Item item={data} />
+                  <button className="btn btn-lg btn-outline-primary" onClick={fetchRandom}>Refresh</button>
+                </div>
+              )
             )
           }
         </div>
