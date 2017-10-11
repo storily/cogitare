@@ -3,7 +3,7 @@ import { ItemLink, SearchLink } from '../util/links'
 
 export function Item ({ item }) {
   return (
-    <div className="card mt-4">
+    <div className="card mt-4 single-item">
       <div className="card-body">
         <h4 className="card-title">{item.text}</h4>
         <p className="mb-2 text-muted">
