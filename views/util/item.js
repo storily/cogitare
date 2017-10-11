@@ -8,7 +8,7 @@ export function Item ({ item }) {
         <h4 className="card-title">{item.text}</h4>
         <p className="mb-2 text-muted">
           <ItemLink id={item.id} />{' '}
-          — Dataset: {item.dataset.name}
+          — Dataset: <span className='text-dark'>{item.dataset.name}</span>{' '}
         </p>
         {item.tags.map(({ name }) =>
           <SearchLink className='card-link' text={name} />
