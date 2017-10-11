@@ -21,3 +21,10 @@ export function TagLink (props) {
   props.className = c(props.className, 'tag')
   return Link(props)
 }
+
+export function ItemLink (props) {
+  props.text = `#${props.id}`
+  props.href = '/item/' + props.id
+  props.className = c(props.className, 'item')
+  return Link(props)
+}
