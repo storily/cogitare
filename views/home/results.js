@@ -12,14 +12,24 @@ export default connect(['dicere'], function Results ({ dicere, query }) {
   }
 
   last.query = query
-  return loading
-    ? <span>Loading...</span>
-    : (error
-      ? <Warning error={error} />
-      : <div>{
+
+  if (loading) {
+    return (
+      <div className="card mt-4">
+        <div className="card-body">
+          <h4 className="card-title text-center">.&nbsp;.&nbsp;. loading .&nbsp;.&nbsp;.</h4>
+        </div>
+      </div>
+    )
+  } else if (error) {
+    return <Warning error={error} />
+  } else {
+    return (
+      <div>{
         data.length > 0
           ? data.map((item) => <Item item={item} />)
           : 'No results'
       }</div>
     )
+  }
 })
