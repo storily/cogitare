@@ -23,7 +23,7 @@ function clearQuery (e) {
   return false
 }
 
-function Search ({ query }) {
+function Search ({ loading, query }) {
   return (
     <form method='get' action='/' onSubmit={updateQuery}>
       <div className='input-group'>
@@ -38,9 +38,9 @@ function Search ({ query }) {
         />
 
         <span className='input-group-btn search-button'>
-          {query.search.trim().length === 0
-            ? <button className='btn btn-success' type='submit'>Search</button>
-            : <LoadingButton className='btn btn-outline-success' onClick={clearQuery} />
+          {loading
+            ? <LoadingButton className='btn btn-outline-success' onClick={clearQuery} />
+            : <button className='btn btn-success' type='submit'>Search</button>
           }
         </span>
       </div>

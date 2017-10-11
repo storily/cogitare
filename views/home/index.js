@@ -5,12 +5,12 @@ import Search from './search'
 import examples from './examples'
 import Results from './results'
 
-export default connect(['query'], function Home ({ query }) {
+export default connect(['dicere', 'query'], function Home ({ dicere, query }) {
   return (
     <div className='container home-search'>
       <div className='row justify-content-center'>
         <div className='col-lg-9'>
-          <Search />
+          <Search loading={dicere.search.loading} />
         </div>
       </div>
       {query.search.trim().length === 0
