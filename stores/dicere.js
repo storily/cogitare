@@ -2,38 +2,54 @@ import { action, observable } from 'mobx'
 import { dicere as conf } from '../config'
 import fetch from 'isomorphic-fetch'
 
+function metaField (name) {
+  return `${name}Raw: metadata(key: "${name}") {
+    value
+  }`
+}
+
+const itemFragment = `fragment itemFields on Item {
+  id
+  text
+  tags { id name }
+  dataset {
+    id
+    name
+    ${metaField('license')}
+  }
+  ${metaField('license')}
+}`
+
 const queries = {
   random: () => `query Random {
-    random {
-      id
-      text
-      tags { id name }
-      dataset { id name }
-    }
-  }`,
+    random { ...itemFields }
+  } ${itemFragment}`,
   search: () => `query Search($query: String!) {
     search(query: $query) {
-      item {
-        id
-        text
-        tags { id name }
-        dataset { id name }
-      }
+      item { ...itemFields }
     }
-  }`
+  } ${itemFragment}`
 }
 
 const dicere = {
   random: observable(stub()),
-  fetchRandom: action(query('random', ({ random }) => random[0])),
+  fetchRandom: action(query('random', ({ random }) => itemiser(random[0]))),
 
   search: observable(stub()),
   fetchSearch: action(query('search',
-    ({ search }) => search.map(({ item }) => item)
+    ({ search }) => search.map(({ item }) => itemiser(item))
   ))
 }
 
 export default dicere
+
+function itemiser (item) {
+  item.license = item.licenseRaw.value ||
+    item.dataset.licenseRaw.value ||
+    'CC-BY-4.0'
+
+  return item
+}
 
 function stub () {
   return { loading: true, data: null, error: null }

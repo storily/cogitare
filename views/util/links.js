@@ -28,3 +28,10 @@ export function ItemLink (props) {
   props.className = c(props.className, 'item')
   return Link(props)
 }
+
+export function LicenseLink (props) {
+  props.text = props.spdx
+  props.href = `https://spdx.org/licenses/${props.spdx}.html`
+  props.className = c(props.className, 'license')
+  return Link(props)
+}

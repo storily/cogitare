@@ -1,5 +1,5 @@
 import Inferno from 'inferno'
-import { ItemLink, SearchLink } from '../util/links'
+import { ItemLink, LicenseLink, SearchLink } from '../util/links'
 
 export function Item ({ item }) {
   return (
@@ -9,6 +9,7 @@ export function Item ({ item }) {
         <p className="mb-2 text-muted">
           <ItemLink id={item.id} />{' '}
           — Dataset: <span className='text-dark'>{item.dataset.name}</span>{' '}
+          — License: <LicenseLink external spdx={item.license} />{' '}
         </p>
         {item.tags.map(({ name }) =>
           <SearchLink className='card-link' text={name} />
