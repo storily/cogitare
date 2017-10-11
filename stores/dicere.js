@@ -46,12 +46,12 @@ const dicere = {
 export default dicere
 
 function itemiser (item) {
-  item.license = item.licenseRaw.value ||
-    item.dataset.licenseRaw.value ||
+  item.license = (item.licenseRaw[0] || {}).value ||
+    (item.dataset.licenseRaw[0] || {}).value ||
     'CC-BY-4.0'
 
-  item.author = item.authorRaw.value ||
-    item.dataset.authorRaw.value ||
+  item.author = (item.authorRaw[0] || {}).value ||
+    (item.dataset.authorRaw[0] || {}).value ||
     null
 
   return item
