@@ -13,7 +13,7 @@ export default connect(['dicere'], function Random ({ dicere }) {
   return (
     <div className='container home-random'>
       <div className='row justify-content-center'>
-        <div className='col-lg-12'>
+        <div className='col-lg-9'>
           <button
             className='btn btn-block btn-outline-success mt-4'
             type='submit'
@@ -22,10 +22,7 @@ export default connect(['dicere'], function Random ({ dicere }) {
           >
             {loading ? 'Loading...' : 'Get another'}
           </button>
-        </div>
-      </div>
-      <div className='row justify-content-center'>
-        <div className='col-lg-12'>
+
           {error ? <Warning error={error} /> : (data ? <Item item={data} /> : null)}
         </div>
       </div>
