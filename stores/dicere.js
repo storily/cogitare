@@ -15,8 +15,10 @@ const itemFragment = `fragment itemFields on Item {
   dataset {
     id
     name
+    ${metaField('author')}
     ${metaField('license')}
   }
+  ${metaField('author')}
   ${metaField('license')}
 }`
 
@@ -47,6 +49,10 @@ function itemiser (item) {
   item.license = item.licenseRaw.value ||
     item.dataset.licenseRaw.value ||
     'CC-BY-4.0'
+
+  item.author = item.authorRaw.value ||
+    item.dataset.authorRaw.value ||
+    null
 
   return item
 }

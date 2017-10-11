@@ -10,6 +10,7 @@ export function Item ({ item }) {
           <ItemLink id={item.id} />{' '}
           — Dataset: <span className='text-dark'>{item.dataset.name}</span>{' '}
           — License: <LicenseLink external spdx={item.license} />{' '}
+          {item.author ? `— Author: ${item.author} ` : null}
         </p>
         {item.tags.map(({ name }) =>
           <SearchLink className='card-link' text={name} />
