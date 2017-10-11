@@ -19,7 +19,7 @@ export default connect(['dicere', 'query'], function Home ({ dicere, query }) {
 
       {empty ? examples() : <Results query={trimmed} />}
 
-      <Link className='algolia' href='https://algolia.com'>
+      <Link external className='algolia' href='https://algolia.com'>
         <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
       </Link>
     </div>

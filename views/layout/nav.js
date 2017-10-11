@@ -28,13 +28,13 @@ export function Nav () {
 
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
-          <Link className='nav-link' href='http://dicere.cogitare.nz/docs'>Docs</Link>
+          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs'>Docs</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link className='nav-link' href='http://dicere.cogitare.nz/docs#bots'>Bots</Link>
+          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs#bots'>Bots</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link className='nav-link' href='http://dicere.cogitare.nz/docs#license'>Licenses</Link>
+          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs#license'>Licenses</Link>
         </li>
       </ul>
     </nav>
