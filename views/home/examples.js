@@ -27,15 +27,16 @@ export default function examples () {
       <p>
         <SearchLink text='fantasy' />{', '}
         <SearchLink text='mood' />{', '}
-        <SearchLink text='science' />
+        <SearchLink text='science' />{', '}
+        <SearchLink text='food' />
       </p>
     </ExampleRow>,
     <ExampleRow>
-      Fandoms
+      Types of prompts
       <p>
-        <SearchLink text='harry-potter' />{', '}
-        <SearchLink text='star-wars' />{', '}
-        <SearchLink text='werewolf' />
+        <SearchLink text='seed' />{', '}
+        <SearchLink text='dialogue' />{', '}
+        <SearchLink text='event' />
       </p>
     </ExampleRow>,
     <ExampleRow>
