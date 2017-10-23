@@ -23,9 +23,14 @@ const itemFragment = `fragment itemFields on Item {
 }`
 
 const queries = {
+  item: () => `query Item($id: ID) {
+    items(id: $id) { ...itemFields }
+  } ${itemFragment}`,
+
   random: () => `query Random {
     random { ...itemFields }
   } ${itemFragment}`,
+
   search: () => `query Search($query: String!) {
     search(query: $query) {
       item { ...itemFields }
@@ -34,8 +39,11 @@ const queries = {
 }
 
 const dicere = {
+  item: observable(stub()),
+  fetchItem: action(query('item', ({ items: [ item ] }) => itemiser(item))),
+
   random: observable(stub()),
-  fetchRandom: action(query('random', ({ random }) => itemiser(random[0]))),
+  fetchRandom: action(query('random', ({ random: [ item ] }) => itemiser(item))),
 
   search: observable(stub()),
   fetchSearch: action(query('search',
