@@ -21,20 +21,20 @@ export function Nav () {
         <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/'>
             <span className='under'>Cogitare</span>
-            <span className='over'>Prompts, seeds, and plots</span>
+            <span className='over'>Prompts and names for writers</span>
           </Link>
         </li>
       </ul>
 
       <ul className='navbar-nav ml-auto'>
         <li className='nav-item'>
-          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs'>Docs</Link>
+          <Link external className='nav-link' href='https://dicere.cogitare.nz/docs'>Docs</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs#bots'>Bots</Link>
+          <Link external className='nav-link' href='https://dicere.cogitare.nz/docs#bots'>Bots</Link>
         </li>
         <li className='nav-item collapse navbar-collapse'>
-          <Link external className='nav-link' href='http://dicere.cogitare.nz/docs#license'>Licenses</Link>
+          <Link external className='nav-link' href='https://dicere.cogitare.nz/docs#license'>Licenses</Link>
         </li>
       </ul>
     </nav>

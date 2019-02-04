@@ -1,27 +1,25 @@
 import Inferno from 'inferno'
-import { connect } from 'inferno-mobx'
 import { Link } from '../util/links'
-import Search from './search'
-import examples from './examples'
-import Results from './results'
+import Names from './names'
+import Prompts from './prompts'
 
-export default connect(['dicere', 'query'], function Home ({ dicere, query }) {
-  const trimmed = query.search.trim()
-  const empty = trimmed.length === 0
-
+export default function Home () {
   return (
     <div className='container home-search'>
-      <div className='row justify-content-center'>
-        <div className='col-lg-9'>
-          <Search loading={!empty && dicere.search.loading} />
+      <div className='row'>
+        <div className='col-lg'>
+          <Prompts />
+        </div>
+        <div className='col-lg'>
+          <Names />
         </div>
       </div>
 
-      {empty ? examples() : <Results query={trimmed} />}
-
-      <Link external className='algolia' href='https://algolia.com'>
-        <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
-      </Link>
+      <p className='text-center'>
+        <Link external className='algolia mt-5' href='https://algolia.com'>
+          <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
+        </Link>
+      </p>
     </div>
   )
-})
+}

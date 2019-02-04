@@ -2,6 +2,8 @@ import Inferno from 'inferno'
 import { Link as InfernoLink } from 'inferno-router'
 import c from 'classnames'
 import spdx from 'spdx-expression-parse'
+import { connect } from 'inferno-mobx'
+import { asParams } from '../../stores/query'
 
 export function Link ({ href, text, className, children, external }) {
   if (external || /^http/.test(href)) {
@@ -11,11 +13,16 @@ export function Link ({ href, text, className, children, external }) {
   }
 }
 
-export function SearchLink (props) {
-  props.href = '/?q=' + encodeURIComponent(props.text)
-  props.className = c(props.className, 'search')
+const searchLinkFactory = (short, kind) => connect(['query'], function SearchLink (props) {
+  const q = asParams(props.query)
+  q.set(short, props.text)
+  props.href = '/?' + q
+  props.className = c(props.className, 'search', kind)
   return Link(props)
-}
+})
+
+export const PromptSearchLink = searchLinkFactory('d', 'dicere')
+export const NameSearchLink = searchLinkFactory('n', 'nominare')
 
 export function TagLink (props) {
   props.href = '/tag/' + props.text
@@ -23,10 +30,17 @@ export function TagLink (props) {
   return Link(props)
 }
 
-export function ItemLink (props) {
+export function PromptLink (props) {
   props.text = `#${props.id}`
-  props.href = '/item/' + props.id
-  props.className = c(props.className, 'item')
+  props.href = '/prompt/' + props.id
+  props.className = c(props.className, 'item', 'dicere')
+  return Link(props)
+}
+
+export function NameLink (props) {
+  props.text = `#${props.id}`
+  props.href = '/name/' + props.id
+  props.className = c(props.className, 'item', 'nominare')
   return Link(props)
 }
 
