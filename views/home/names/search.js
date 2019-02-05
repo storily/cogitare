@@ -42,7 +42,7 @@ function Search ({ loading, query }) {
         <span className='input-group-btn search-button'>
           {loading
             ? <LoadingButton className='btn btn-outline-success' onClick={clearQuery} />
-            : <button className='btn btn-success' type='submit'>Search</button>
+            : <button className='btn btn-success' type='submit'>Find</button>
           }
         </span>
       </div>
