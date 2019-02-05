@@ -1,6 +1,9 @@
 {
   "presets": [["env", {
-    "spec": true
+    "spec": true,
+    "targets": {
+      "browsers": ["last 2 firefox versions", "last 2 chrome versions"]
+    }
   }], "babili"],
   "plugins": ["inferno"]
 }
