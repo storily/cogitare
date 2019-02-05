@@ -15,11 +15,14 @@ export default function Home () {
         </div>
       </div>
 
-      <p className='text-center'>
-        <Link external className='algolia mt-5' href='https://algolia.com'>
-          <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
-        </Link>
-      </p>
+      <div className='row my-5'>
+        <div className='col text-center'>
+          <Link external className='mr-2' href='https://algolia.com'>
+            <img src='/assets/search-by-algolia.svg' alt='Search by Algolia' width='180' />
+          </Link>
+          and <span className='text-dark'>Postgres</span>
+        </div>
+      </div>
     </div>
   )
 }
