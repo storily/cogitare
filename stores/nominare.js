@@ -10,10 +10,10 @@ const endpoints = {
 
 const nominare = {
   item: observable(stub()),
-  fetchItem: action(query('item', ({ items: [ item ] }) => itemiser(item))),
+  fetchItem: action(query('item')),
 
   random: observable(stub()),
-  fetchRandom: action(query('random', ({ random: [ item ] }) => itemiser(item))),
+  fetchRandom: action(query('random')),
 
   search: observable(stub()),
   fetchSearch: action(query('search')),
