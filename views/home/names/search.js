@@ -33,8 +33,8 @@ function Search ({ loading, query }) {
           type='text'
           name='q'
           className='form-control form-control-lg'
-          placeholder='Search names'
-          aria-label='Search names'
+          placeholder='Query names'
+          aria-label='Query names'
           autoFocus='autofocus'
           value={query.nominare}
         />

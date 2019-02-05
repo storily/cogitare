@@ -16,7 +16,7 @@ export function ExampleRow ({ children }) {
 
 export default function examples () {
   return [
-    <h2 className='try'>Try some searches:</h2>,
+    <h2 className='try'>Try some queries:</h2>,
 
     <ExampleRow>
       Language
@@ -35,11 +35,11 @@ export default function examples () {
       </p>
     </ExampleRow>,
     <ExampleRow>
-      Ethnicity
+      Number
       <p>
-        <NameSearchLink text='middle-eastern' />{', '}
-        <NameSearchLink text='amerindian' />{', '}
-        <NameSearchLink text='pacific' />
+        <NameSearchLink text='20 first' />{', '}
+        <NameSearchLink text='two last' />{', '}
+        <NameSearchLink text='15 men' />
       </p>
     </ExampleRow>
   ]
