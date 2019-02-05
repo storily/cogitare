@@ -1,5 +1,5 @@
 import Inferno from 'inferno'
-import { NameLink, LicenseLink, NameSearchLink } from '../util/links'
+import { NameLink, NameSearchLink } from '../util/links'
 
 function join (items, joiner, ifEmpty = []) {
   if (items.length > 0) {
@@ -24,15 +24,15 @@ export function Name ({ first, last, details }) {
         {details ? [
           <p className="mt-3 mb-0 text-muted">
           — Kinds: {join(details.kinds
-            .map((kind) => <NameSearchLink text={kind} />), ', ', '(none)')}
+              .map((kind) => <NameSearchLink text={kind} />), ', ', '(none)')}
           </p>,
           <p className="mb-0 text-muted">
           — Sources: {join(details.sources
-            .map((src) => <span className='text-dark'>{src}</span>), ', ')}
+              .map((src) => <span className='text-dark'>{src}</span>), ', ')}
           </p>,
           <p className="mb-2 text-muted">
           — Score: {details.score}
-          </p>,
+          </p>
         ] : null}
       </div>
     </div>

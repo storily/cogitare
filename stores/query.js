@@ -1,5 +1,5 @@
 import { observable } from 'mobx'
-import { URL } from 'url'
+import { URL, URLSearchParams } from 'url'
 
 const query = observable({
   dicere: '',
@@ -15,7 +15,7 @@ export function fromUrl (url) {
 }
 
 export function asParams (q) {
-  const params = new URLSearchParams
+  const params = new URLSearchParams()
   if (q.nominare.length) params.set('n', q.nominare)
   if (q.dicere.length) params.set('d', q.dicere)
   return params

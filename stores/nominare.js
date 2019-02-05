@@ -1,11 +1,12 @@
 import { action, observable } from 'mobx'
 import { nominare as conf } from '../config'
 import fetch from 'isomorphic-fetch'
+import { URL, URLSearchParams } from 'url'
 
 const endpoints = {
   item: '/details',
   random: '/random',
-  search: '/search',
+  search: '/search'
 }
 
 const nominare = {
@@ -16,7 +17,7 @@ const nominare = {
   fetchRandom: action(query('random')),
 
   search: observable(stub()),
-  fetchSearch: action(query('search')),
+  fetchSearch: action(query('search'))
 }
 
 export default nominare

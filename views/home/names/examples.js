@@ -29,7 +29,7 @@ export default function examples () {
     <ExampleRow>
       Origin
       <p>
-        <NameSearchLink text='aboriginal' />{', '}
+        <NameSearchLink text='pacific' />{', '}
         <NameSearchLink text='latin' />{', '}
         <NameSearchLink text='indian' />
       </p>

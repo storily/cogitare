@@ -19,7 +19,7 @@ export default connect(['nominare'], function ItemView ({ nominare, params: { id
             (data.first && [<h4 className='mt-5'>As first name:</h4>,
               <Name first={data.first.name} details={data.first} />]),
             (data.last && [<h4 className='mt-5'>As last name:</h4>,
-              <Name last={data.last.name} details={data.last} />]),
+              <Name last={data.last.name} details={data.last} />])
           ].filter(n => n) : null)}
         </div>
       </div>
