@@ -1,13 +1,14 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
 import { Warning } from '../../util/errors'
+import { Name } from '../../util/name'
 
 const last = {}
 export default connect(['nominare'], function Results ({ nominare, query }) {
   const { search: { data, error, loading }, fetchSearch } = nominare
 
   if (!(data || error) || last.query !== query) {
-    fetchSearch({ n: 20 })
+    fetchSearch({ q: query })
   }
 
   last.query = query
@@ -26,7 +27,7 @@ export default connect(['nominare'], function Results ({ nominare, query }) {
     return (
       <div>{
         data.length > 0
-          ? data.map(({ first, last }) => <p>{ first } { last }</p>)
+          ? data.map(({ first, last }) => <Name first={first} last={last} />)
           : 'No results'
       }</div>
     )

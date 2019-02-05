@@ -4,8 +4,8 @@ import fetch from 'isomorphic-fetch'
 
 const endpoints = {
   item: '/details',
-  random: '/random/:n',
-  search: '/random/:n',
+  random: '/random',
+  search: '/search',
 }
 
 const nominare = {
@@ -38,10 +38,14 @@ function query (name, transform = (a) => a) {
     nominare[name].loading = false
   }
 
-  return async ({ n = 5 } = {}) => {
+  return async (params = {}) => {
     nominare[name].loading = true
-    const url = new URL(endpoints[name].replace(':n', n), conf.url)
-    // add variables
+
+    const url = new URL(
+      endpoints[name] + '?' + new URLSearchParams(params),
+      conf.url
+    )
+
     try {
       success(await fetch(url.toString()).then((resp) => resp.json()))
     } catch (err) {

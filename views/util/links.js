@@ -38,8 +38,7 @@ export function PromptLink (props) {
 }
 
 export function NameLink (props) {
-  props.text = `#${props.id}`
-  props.href = '/name/' + props.id
+  props.href = '/name/' + props.text
   props.className = c(props.className, 'item', 'nominare')
   return Link(props)
 }
