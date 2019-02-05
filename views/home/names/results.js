@@ -7,7 +7,7 @@ export default connect(['nominare'], function Results ({ nominare, query }) {
   const { search: { data, error, loading }, fetchSearch } = nominare
 
   if (!(data || error) || last.query !== query) {
-    fetchSearch({ variables: { query } })
+    fetchSearch({ n: 20 })
   }
 
   last.query = query
@@ -26,7 +26,7 @@ export default connect(['nominare'], function Results ({ nominare, query }) {
     return (
       <div>{
         data.length > 0
-          ? data.map((item) => <Item item={item} />)
+          ? data.map(({ first, last }) => <p>{ first } { last }</p>)
           : 'No results'
       }</div>
     )
