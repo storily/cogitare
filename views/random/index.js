@@ -1,7 +1,7 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
 import { Warning } from '../util/errors'
-import { Item } from '../util/item'
+import { Prompt } from '../util/prompt'
 
 export default connect(['dicere'], function Random ({ dicere }) {
   const { random: { data, error, loading }, fetchRandom } = dicere
@@ -23,7 +23,7 @@ export default connect(['dicere'], function Random ({ dicere }) {
             {loading ? 'Loading...' : 'Get another'}
           </button>
 
-          {error ? <Warning error={error} /> : (data ? <Item item={data} /> : null)}
+          {error ? <Warning error={error} /> : (data ? <Prompt item={data} /> : null)}
         </div>
       </div>
     </div>

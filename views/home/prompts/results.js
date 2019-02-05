@@ -1,7 +1,7 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
 import { Warning } from '../../util/errors'
-import { Item } from '../../util/item'
+import { Prompt } from '../../util/prompt'
 
 const last = {}
 export default connect(['dicere'], function Results ({ dicere, query }) {
@@ -27,7 +27,7 @@ export default connect(['dicere'], function Results ({ dicere, query }) {
     return (
       <div>{
         data.length > 0
-          ? data.map((item) => <Item item={item} />)
+          ? data.map((item) => <Prompt item={item} />)
           : 'No results'
       }</div>
     )

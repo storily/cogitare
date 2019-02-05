@@ -1,7 +1,7 @@
 import Inferno from 'inferno'
 import { PromptLink, LicenseLink, PromptSearchLink } from '../util/links'
 
-export function Item ({ item }) {
+export function Prompt ({ item }) {
   return (
     <div className="card mt-4 single-item">
       <div className="card-body">

@@ -1,7 +1,6 @@
 import Inferno from 'inferno'
 import { connect } from 'inferno-mobx'
 import { Warning } from '../../util/errors'
-import { Item } from '../../util/item'
 
 const last = {}
 export default connect(['nominare'], function Results ({ nominare, query }) {
