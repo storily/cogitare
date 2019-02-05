@@ -4,3 +4,6 @@ extends:
   - plugin:inferno/recommended
 rules:
   inferno/jsx-key: off
+  no-unused-vars:
+    - error
+    - varsIgnorePattern: Inferno
