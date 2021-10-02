@@ -21,19 +21,11 @@ const searchLinkFactory = (short, kind) => connect(['query'], function SearchLin
   return Link(props)
 })
 
-export const PromptSearchLink = searchLinkFactory('d', 'dicere')
 export const NameSearchLink = searchLinkFactory('n', 'nominare')
 
 export function TagLink (props) {
   props.href = '/tag/' + props.text
   props.className = c(props.className, 'tag')
-  return Link(props)
-}
-
-export function PromptLink (props) {
-  props.text = `#${props.id}`
-  props.href = '/prompt/' + props.id
-  props.className = c(props.className, 'item', 'dicere')
   return Link(props)
 }
 

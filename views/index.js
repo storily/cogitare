@@ -5,7 +5,6 @@ import { Layout } from './layout'
 import Home from './home'
 import NotFound from './not-found'
 import Random from './random'
-import Prompt from './prompt'
 import Name from './name'
 
 export default function app (ctx) {
@@ -14,7 +13,6 @@ export default function app (ctx) {
       <Route component={Layout}>
         <IndexRoute component={Home} />
         <Route path='/random' component={Random} />
-        <Route path='/prompt/:id' component={Prompt} />
         <Route path='/name/:id' component={Name} />
         <Route path='*' component={NotFound} />
       </Route>

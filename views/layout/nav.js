@@ -21,7 +21,7 @@ export function Nav () {
         <li className='nav-item collapse navbar-collapse'>
           <Link className='nav-link' href='/'>
             <span className='under'>Cogitare</span>
-            <span className='over'>Prompts and names for writers</span>
+            <span className='over'>Name generator</span>
           </Link>
         </li>
       </ul>
